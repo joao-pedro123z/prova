@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./img/tacsite.ico">
+    <title>Sistema de Avaliação</title>
+    <style type="text/css">
+        .title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+       .button {
+        position: relative;
+        left: 50px;
+        bottom: -20px;
+      border: 5px double green;
+      border-radius: 30px;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transition:.2s;
+      background-color: white;
+    }
+    .button:active{
+    background-color: #503230;
+    transition:.2s;
+    }
+    #texto{
+        width: 300px;
+    }
+    .hide{
+        display: none;
+        position: relative;
+        left: 50px;
+        margin-top: 20px;
+    }
+    textarea{
+        resize: none;
+
+    }
+    fieldset{
+        position: relative;
+        left: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 14px;
+        flex-direction: column;
+        width: max-content;
+        border: 2px solid green;
+     
+    }
+    legend{
+         font-weight: bolder;
+         font-size: 18px;  
+    }
+    #yname{
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        left: 50px;
+    }
+    .topic{
+        display: block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    </style>
+</head>
+<body >
+    <h2 class="title"> Sistema de Avaliação Online </h2>
+    <form>
+
+        <div id="yname"><b>Seu Nome:</b> <input type="text" id="texto"/><br></div>
+        <fieldset>
+        <legend> 1. Qual curso Técnico do Amélia é da área de Tecnologia? </legend>
+        <select for="Select" name="sel" id="Q01"> 
+        <option id="v0" value="none"> none </option>    
+        <option id="v1" value= Administração>Administração</option>
+        <option id="v2" value= Informática>Informática</option>
+        <option id="v3" value= Enfermagem>Enfermagem</option>
+        <input type="reset" name="VF"  class="none"> <br>
+        </select>
+        </fieldset>
+        
+        <fieldset>
+            <legend>2. Quais cursos são ofertados na EEEP Amélia Figueiredo de Lavor?</legend>
+            <textarea name="tex1" id="Q02" cols="56" rows="5"></textarea> <br>
+        </fieldset>
+        <fieldset>
+            <legend>3. Marque as opções que possui os sistemas de numerações novos que 
+                    aprendemos no 1º de Informática</legend>
+        Sistema Octal <input type="checkbox" id="check1"> <br>
+        Sistema Binário <input type="checkbox" id="check2"> <br>
+        Sistema Decimal <input type="checkbox" id="check3"> <br>
+        Algarismos Hexadecimal <input type="checkbox" id="check4"> <br>
+        </fieldset>
+        <fieldset>
+         <legend>4. Qual o produto abaixo é mais adequado para limpar uma memória RAM?</legend>
+            <label for="iso">Álcool Isopropílico</label>
+            <input type="radio" name="limpeza" id="iso"> <br>
+            <label for="con">Limpa Contato</label>
+            <input type="radio" name="limpeza" id="con"> <br>
+            <label for="alc">Álcool 70%</label>
+            <input type="radio" name="limpeza" id="alc"> <br>
+            <label for="agu">Água</label> 
+            <input type="radio" name="limpeza" id="agu"> <br> 
+            <input type="reset" class="none" name="cleat" id="cle"> <br> 
+        </fieldset> 
+
+        <fieldset>
+            <legend>5. Podemos afirmar que o modo de funcionamento de memória RAM em<br> 
+                DUAL CHANNEL só pode ser feito com pares de módulos de memória. 
+                Marque se a afirmação é verdadeira ou falsa.
+            </legend>
+            <label for="ver">Verdadeira</label>
+            <input type="radio" name="VF" id="ver"> <br>
+            <label for="fal">Falsa</label> 
+            <input type="radio" name="VF" id="fal"> <br>
+            <input type="reset" name="VF"  class="none"> <br>
+        </fieldset>
+        
+        
+        <button type="button" class="button" onclick="corrigir()"><b>Corrigir</b></button>
+        <br>
+        <br>
+        <fieldset class="hide">
+            <legend><b>Resumo</b></legend>
+            <div class="topic" id="corr"><b>CORREÇÃO</b></div>
+            <br>
+            <div class="cor" id="nome"></div>
+            <div class="cor" id="corretas"></div>
+            <div class="cor" id="percentual"></div>
+            <br>
+            <div class="topic" id="resp"><b> SUAS RESPOSTAS</b></div>
+            <br>
+            <div id="sel"></div>
+            <div id="area"></div>
+            <div id="cBox"></div>
+            <div id="radio"></div>
+            <div id="vf"></div>
+            <br>
+            <div class="topic" id="resp"><b>GABARITO</b></div>
+            <br>
+            <div id="sel1"></div>
+            <div id="area1"></div>
+            <div id="cBox1"></div>
+            <div id="radio1"></div>
+            <div id="vf1"></div>
+        </fieldset>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
